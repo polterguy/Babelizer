@@ -1,0 +1,33 @@
+.arguments
+   id.like:string
+   id.mt:string
+   id.lt:string
+   id.mteq:string
+   id.lteq:string
+   id.neq:string
+   id.eq:string
+   locale.like:string
+   locale.mt:string
+   locale.lt:string
+   locale.mteq:string
+   locale.lteq:string
+   locale.neq:string
+   locale.eq:string
+   text.like:string
+   text.mt:string
+   text.lt:string
+   text.mteq:string
+   text.lteq:string
+   text.neq:string
+   text.eq:string
+auth.ticket.verify:root
+add:x:./*/wait.slots.signal/*/args
+   get-nodes:x:@.arguments/*
+wait.slots.signal:magic.db.mysql.read
+   database:babelizer
+   table:translations
+   args
+      limit:long:1
+   columns
+      count(*) as count
+slots.return-nodes:x:@wait.slots.signal/*

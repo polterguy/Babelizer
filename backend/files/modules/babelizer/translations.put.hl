@@ -1,0 +1,16 @@
+.arguments
+   id:string
+   locale:string
+   text:string
+auth.ticket.verify:root
+add:x:./*/wait.slots.signal/*/values
+   get-nodes:x:@.arguments/*
+unwrap:x:+/*/ids/*
+wait.slots.signal:magic.db.mysql.update
+   database:babelizer
+   table:translations
+   values
+   ids
+      id:x:@.arguments/*/id
+      locale:x:@.arguments/*/locale
+slots.return-nodes:x:@wait.slots.signal/*
